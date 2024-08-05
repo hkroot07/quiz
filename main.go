@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"quiz/questions"
+	"quiz/shuffler"
 )
 
 func main() {
@@ -12,5 +13,5 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Couldn't load questions: %v\n", err)
 		os.Exit(1)
 	}
-	fmt.Println(questions)
+	shuffler.Shuffle(questions)
 }
